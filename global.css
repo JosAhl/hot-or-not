@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --font-size-s: 0.75rem;
+    --font-size-m: 1.125rem;
+    --font-size-l: 1.5rem;
+    --font-family-title: 'Anton SC';
+    --font-family-text: 'Poppins';
+    --color-font: #333333;
+    --color-white: #f5f4f2;
+    --color-yellow: #fabd3f;
+    --color-blue: #6496c3;
+}
+
+body {
+    font-family: var(--font-family-text);
+    background-color: var(--color-white);
+    margin: 0;
+    padding: 0;
+}

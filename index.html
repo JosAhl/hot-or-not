@@ -6,15 +6,20 @@
     <title>Hot or Not</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="logo.css">
 </head>
 <body>
     <div class="container">
+        <section id="search">
+            <img src="/assets/logo.png" alt="Logo with half sun and half snowflake" class="logo">
 
-        <form id="form">
-            <label for="country">Enter Country:</label>
-            <input type="text" id="country" placeholder="e.g. Spain" required>
-            <button type="submit">How will it be?</button>
-        </form>
+            <form id="form">
+                <label for="country">Enter Country:</label>
+                <input type="text" id="country" placeholder="e.g. Spain" required>
+                <button type="submit">How will it be?</button>
+            </form>
+        </section>
 
         <section id="results">
             <div id="country"></div>
