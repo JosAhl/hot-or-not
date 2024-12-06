@@ -132,7 +132,7 @@ function displayCountryInfo(countryData) {
 function displayWeather(data) {
     const weatherDiv = document.getElementById('weatherInfo');
         
-    let weatherHtml = '<h3>7-Day Weather Forecast:</h3><div class="weather-grid">';
+    let weatherHtml = '<h3>Weather Forecast:</h3><div class="weather-grid">';
 
     data.temperature_2m_max.forEach((tempMax, index) => {
         const tempMin = data.temperature_2m_min[index];
@@ -140,7 +140,7 @@ function displayWeather(data) {
 
         weatherHtml += `
             <div class="weather-day">
-                <p>Day ${index + 1}</p>
+                <p class="weather-day-text">Day ${index + 1}</p>
                 <p>Max: ${tempMax}°C</p>
                 <p>Min: ${tempMin}°C</p>
             </div>
