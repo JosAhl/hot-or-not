@@ -1,0 +1,18 @@
+.country-info {
+    text-align: center;
+}
+
+.country-flag {
+    width: 50%;
+    border-radius: 1rem;
+    margin: 0.5rem 0;
+}
+
+@media screen and (min-width: 600px) {
+    .country-flag {
+        width: 35%;
+    }
+    .country-flag {
+        width: 20%;
+    }
+}
