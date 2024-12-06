@@ -1,0 +1,15 @@
+h2, h3 {
+    font-family: var(--font-family-title);
+    font-size: 175%;
+    color: var(--color-font);
+    margin: 0.5rem;
+}
+
+h3 {
+    font-size: 125%;
+    text-align: center;
+}
+
+.weather-day-text {
+    font-weight: 600;
+}
