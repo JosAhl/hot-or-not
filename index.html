@@ -8,7 +8,20 @@
     <link rel="stylesheet" href="global.css">
 </head>
 <body>
-    
+    <div class="container">
+
+        <form id="form">
+            <label for="country">Enter Country:</label>
+            <input type="text" id="country" placeholder="e.g. Spain" required>
+            <button type="submit">How will it be?</button>
+        </form>
+
+        <section id="results">
+            <div id="country"></div>
+            <div id="weatherInfo"></div>
+        </section>
+
+    </div>
 </body>
 </html>
 <script src="script.js"></script>
