@@ -140,6 +140,7 @@ function displayWeather(data) {
 
     data.temperature_2m_max.forEach((tempMax, index) => {
         const tempMin = data.temperature_2m_min[index];
+        const weatherIcon = getWeatherIcon(tempMax);
 
         const currentDate = new Date(firstDate);
         currentDate.setDate(firstDate.getDate() + index);
@@ -149,6 +150,7 @@ function displayWeather(data) {
 
         weatherHtml += `
             <div class="weather-day">
+                <img src="${weatherIcon}" alt="Weather icon" class="weather-icon">
                 <p class="weather-day-text">${dayName}</p>
                 <p>Max:<br> ${tempMax}°C</p>
                 <p>Min:<br> ${tempMin}°C</p>
@@ -185,4 +187,18 @@ function displayTravelTip(weatherData) {
     }
 
     tipDiv.innerHTML = `<h3>Travel Tip:</h3><p>${tip}</p>`;
+}
+
+/*--- Weather icon depending on temperature---*/
+function getWeatherIcon(temp) {
+    if (temp > 15) {
+        /*--- Sun icon for hot ---*/
+        return '/assets/hot.png';
+    } else if (temp <= 15 && temp >= 0) {
+        /*--- Cloud icon for medium ---*/
+        return '/assets/or.png';
+    } else {
+        /*--- Snowflake icon for minus ---*/
+        return '/assets/not.png';
+    }
 }
