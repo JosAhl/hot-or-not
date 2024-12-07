@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         /*--- Clear results ---*/
         document.getElementById('weatherInfo').innerHTML = '';
+        document.getElementById('travelTip').innerHTML = '';
 
         if (!country) {
             alert('Please enter a valid country.');
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     /*--- Display results in HTML ---*/
                     displayCountryInfo(countryData);
                     displayWeather(weatherData);
+                    displayTravelTip(weatherData);
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -157,3 +159,30 @@ function displayWeather(data) {
     weatherHtml += '</div>';
     weatherDiv.innerHTML += weatherHtml;
 }})
+
+/*--- Display travel tip in html ---*/
+function displayTravelTip(weatherData) {
+    const tipDiv = document.getElementById('travelTip');
+    const maxTemp = weatherData.temperature_2m_max[0];
+    
+    /*--- Display tip depending on max temperature ---*/
+    let tip = 'Remember your bag and enjoy your trip!';
+    
+    if (maxTemp > 35) {
+        tip = 'Extreme heat! Stay hydrated and stay in the shade. Maybe just cancel and go to a sauna instead...';
+    } else if (maxTemp > 30) {
+        tip = 'Pack sunscreen, water, wear light clothing and don\'t stay in the sun for too long!';
+    } else if (maxTemp > 25) {
+        tip = 'Pack sunscreen and stay hydrated!';
+    } else if (maxTemp > 15) {
+        tip = 'Mild temperatures. A light jacket could be useful.';
+    } else if (maxTemp > 5) {
+        tip = 'Bring some warm clothes and a jacket.';
+    } else if (maxTemp > -5) {
+        tip = 'Cool days this week, bring a jacket and your most fancy long johns.';
+    } else {
+        tip = 'Pack a jacket or four, don\'t forget your gloves and read up on how to build an igloo.';
+    }
+
+    tipDiv.innerHTML = `<h3>Travel Tip:</h3><p>${tip}</p>`;
+}
