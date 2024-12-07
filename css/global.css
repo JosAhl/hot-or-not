@@ -13,13 +13,13 @@
     --color-yellow: #fabd3f;
     --color-blue: #6498c8;
     --color-darkblue: #2a3354;
+    --color-background: #0b1129;
 }
 
 body {
     font-family: var(--font-family-text);
-    background-color: var(--color-darkblue);
+    background-color: var(--color-background);
     background-image: url("../assets/background.jpg");
-    background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
     margin: 0;
