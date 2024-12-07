@@ -134,13 +134,20 @@ function displayWeather(data) {
         
     let weatherHtml = '<h3>Weather Forecast:</h3><div class="weather-grid">';
 
+    const firstDate = new Date(data.time[0]);
+
     data.temperature_2m_max.forEach((tempMax, index) => {
         const tempMin = data.temperature_2m_min[index];
-        const weatherCode = data.weathercode[index];
+
+        const currentDate = new Date(firstDate);
+        currentDate.setDate(firstDate.getDate() + index);
+        
+        const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const dayName = dayNames[currentDate.getDay()];
 
         weatherHtml += `
             <div class="weather-day">
-                <p class="weather-day-text">Day ${index + 1}</p>
+                <p class="weather-day-text">${dayName}</p>
                 <p>Max:<br> ${tempMax}°C</p>
                 <p>Min:<br> ${tempMin}°C</p>
             </div>
