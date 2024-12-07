@@ -203,3 +203,20 @@ function getWeatherIcon(temp) {
         return '/assets/not.png';
     }
 }
+
+
+
+/*-------------------- LOGO HOVER ANIMATION --------------------*/
+const logo = document.querySelector('.logo');
+
+logo.addEventListener('mouseenter', () => {
+    /*--- Add spin class to logo ---*/
+    if (!logo.classList.contains('spin')) {
+        logo.classList.add('spin');
+    }
+});
+
+logo.addEventListener('animationend', () => {
+    /*--- Remove spin class from logo when animation is done ---*/
+    logo.classList.remove('spin');
+});
