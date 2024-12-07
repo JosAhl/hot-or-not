@@ -13,7 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('weatherInfo').innerHTML = '';
         document.getElementById('travelTip').innerHTML = '';
 
-        if (!country) {
+        const foundCountry = filteredCountry.find(c => 
+            c.countryName.toLowerCase() === country
+        );
+
+        if (!foundCountry) {
             alert('Please enter a valid country.');
             return;
         }
@@ -67,7 +71,6 @@ fetch('https://restcountries.com/v3.1/all')
                 countryCurrency,
             };
         });
-    console.log(filteredCountry);
 })
     .catch(error => {
         console.error('Error:', error);
@@ -102,7 +105,6 @@ function fetchWeather(latitude, longitude) {
         return response.json();
     })
     .then(data => {
-        console.log('Weather:', data.daily);
         return data.daily;
     })
     .catch(error => {
@@ -125,8 +127,7 @@ function displayCountryInfo(countryData) {
             <img src="${countryData.flag}" alt="Flag of ${countryData.name}" class="country-flag">
         </section>
     `;
-        
-    console.log('Country info:', countryData.name);
+    
     return countryData;
 }
 
