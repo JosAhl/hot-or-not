@@ -194,13 +194,13 @@ function displayTravelTip(weatherData) {
 function getWeatherIcon(temp) {
     if (temp > 15) {
         /*--- Sun icon for hot ---*/
-        return '/assets/hot.png';
+        return 'assets/hot.png';
     } else if (temp <= 15 && temp >= 0) {
         /*--- Cloud icon for medium ---*/
-        return '/assets/or.png';
+        return 'assets/or.png';
     } else {
         /*--- Snowflake icon for minus ---*/
-        return '/assets/not.png';
+        return 'assets/not.png';
     }
 }
 

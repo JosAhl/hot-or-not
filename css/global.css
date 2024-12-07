@@ -18,7 +18,7 @@
 body {
     font-family: var(--font-family-text);
     background-color: var(--color-darkblue);
-    background-image: url("/assets/background.jpg");
+    background-image: url("assets/background.jpg");
     background-position: top center;
     background-repeat: no-repeat;
     margin: 0;
