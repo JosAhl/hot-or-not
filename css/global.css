@@ -7,15 +7,43 @@
     --font-size-l: 1.5rem;
     --font-family-title: 'Anton SC';
     --font-family-text: 'Poppins';
-    --color-font: #333333;
+    --color-darkgray: #313131;
+    --color-lightgray: #555555;
     --color-white: #f5f4f2;
     --color-yellow: #fabd3f;
-    --color-blue: #6496c3;
+    --color-blue: #6498c8;
+    --color-darkblue: #2a3354;
 }
 
 body {
     font-family: var(--font-family-text);
-    background-color: var(--color-white);
+    background-color: var(--color-darkblue);
+    background-image: url("/assets/background.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: 1.25rem auto;
+    padding: 1.25rem;
+    background-color: rgba(245, 244, 242, 0.8);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 70%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .container {
+        max-width: 50%;
+    }
 }

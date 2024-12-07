@@ -141,8 +141,8 @@ function displayWeather(data) {
         weatherHtml += `
             <div class="weather-day">
                 <p class="weather-day-text">Day ${index + 1}</p>
-                <p>Max: ${tempMax}°C</p>
-                <p>Min: ${tempMin}°C</p>
+                <p>Max:<br> ${tempMax}°C</p>
+                <p>Min:<br> ${tempMin}°C</p>
             </div>
         `;
     });
