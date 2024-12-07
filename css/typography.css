@@ -1,7 +1,7 @@
 h2, h3 {
     font-family: var(--font-family-title);
     font-size: 175%;
-    color: var(--color-font);
+    color: var(--color-darkgray);
     margin: 0.5rem;
 }
 
@@ -12,9 +12,12 @@ h3 {
 
 .weather-day-text {
     font-weight: 600;
+    color: var(--color-darkgray);
     margin: 0 0 0.5rem 0;
 }
 
 p {
+    color: var(--color-darkgray);
     text-align: center;
+    margin: 0 0 0.5rem 0;
 }
