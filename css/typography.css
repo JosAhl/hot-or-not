@@ -13,3 +13,7 @@ h3 {
 .weather-day-text {
     font-weight: 600;
 }
+
+p {
+    text-align: center;
+}
