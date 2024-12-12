@@ -45,36 +45,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000); 
     });
 
-
-
 /*-------------------- FETCH AND FILTER COUNTRY API --------------------*/
 fetch('https://restcountries.com/v3.1/all')
     .then(response => response.json())
     .then(data => {
         filteredCountry = data.map(country => {
-            const countryName = country.name?.common || "N/A";
-            const countryFlag = country.flags?.png || "N/A";
+            const countryName = country.name?.common;
+            const countryFlag = country.flags?.png;
             const countryLatLong = country.latlng || [];
-            const countryCurrency = country.currencies
-            ? Object.keys(country.currencies).map(curr => ({
-                code: curr,
-                name: country.currencies[curr]?.name,
-                symbol: country.currencies[curr]?.symbol
-              }))
-            : [];
 
             return {
                 countryName,
                 countryFlag,
-                latitude: countryLatLong[0] || "N/A",
-                longitude: countryLatLong[1] || "N/A",
-                countryCurrency,
+                latitude: countryLatLong[0],
+                longitude: countryLatLong[1]
             };
         });
-})
+    })
     .catch(error => {
         console.error('Error:', error);
-});
+    });
 
 /*--- Fetch country details ---*/
 function fetchCountryDetails(searchCountry) {
@@ -90,8 +80,7 @@ function fetchCountryDetails(searchCountry) {
         name: foundCountry.countryName,
         flag: foundCountry.countryFlag,
         lat: foundCountry.latitude,
-        lon: foundCountry.longitude,
-        currencies: foundCountry.countryCurrency
+        lon: foundCountry.longitude
     });
 }
 
@@ -112,8 +101,6 @@ function fetchWeather(latitude, longitude) {
         throw error;
     });
 }
-
-
 
 /*-------------------- DISPLAY IN HTML --------------------*/
 
@@ -161,7 +148,7 @@ function displayWeather(data) {
 
     weatherHtml += '</div>';
     weatherDiv.innerHTML += weatherHtml;
-}})
+}
 
 /*--- Display travel tip in html ---*/
 function displayTravelTip(weatherData) {
@@ -204,8 +191,6 @@ function getWeatherIcon(temp) {
     }
 }
 
-
-
 /*-------------------- LOGO HOVER ANIMATION --------------------*/
 const logo = document.querySelector('.logo');
 
@@ -219,4 +204,4 @@ logo.addEventListener('mouseenter', () => {
 logo.addEventListener('animationend', () => {
     /*--- Remove spin class from logo when animation is done ---*/
     logo.classList.remove('spin');
-});
+})});
